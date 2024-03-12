@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEditor.SceneManagement;
 using Unity.VisualScripting;
+using Unity.AI.Navigation;
 
 namespace TileMap
 {
@@ -16,7 +17,9 @@ namespace TileMap
         public GameObject sand;
         public GameObject water;
         public GameObject grassAndTree;
+
         public Transform TileParent;
+        public NavMeshSurface navMeshSurface;
 
         public float width = 5f;
         public float height = 5f;
@@ -41,6 +44,10 @@ namespace TileMap
                     prefabInstance.transform.position = pos;
 
                 }
+            }
+            if (navMeshSurface != null)
+            {
+                navMeshSurface.BuildNavMesh();
             }
         }
     }
