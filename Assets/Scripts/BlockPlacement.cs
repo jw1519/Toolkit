@@ -16,7 +16,7 @@ namespace TileMap
         public GameObject sand;
         public GameObject water;
         public GameObject grassAndTree;
-        public GameObject TileParent;
+        public Transform TileParent;
 
         public float width = 5f;
         public float height = 5f;
@@ -35,9 +35,10 @@ namespace TileMap
                 {
                     Vector3 pos = new Vector3(x, 0, y) * spacing;
                     int index = random.Next(Blocklist.Count);
-                    Instantiate(Blocklist[index], pos, Quaternion.identity);
-                    
-                    
+
+                    GameObject prefabInstance = Instantiate(Blocklist[index]);
+                    prefabInstance.transform.SetParent(TileParent);
+                    prefabInstance.transform.position = pos;
 
                 }
             }
