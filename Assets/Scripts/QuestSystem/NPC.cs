@@ -30,8 +30,6 @@ public class NPC : MonoBehaviour
                     QuestManager.instance.questMenu.text = "Quest: \n" + itemtext;
                 }
             }
-
-        
         }
     }
 }

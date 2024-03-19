@@ -18,7 +18,6 @@ public class QuestManager : MonoBehaviour
         instance = this;
     }
 
-
     //quest table
     public TMP_Text questMenu;
 

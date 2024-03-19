@@ -15,5 +15,4 @@ public class Quest
         questDescription = description;
         isCompleted = false;
     }
-    
 }

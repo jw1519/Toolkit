@@ -9,13 +9,10 @@ public class QuestMarker : MonoBehaviour
     public string questDescription;
     public string questCompletionMessage;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         QuestManager.instance.RegisterQuestMarker(this);
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -24,5 +21,4 @@ public class QuestMarker : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
 }
