@@ -22,6 +22,7 @@ public class NPC : MonoBehaviour
             else if (quest.isCompleted == true)
             {
                 QuestManager.instance.Quests.Remove(name);
+
                 Debug.Log(questMarker.questCompletionMessage);
                 QuestManager.instance.questMenu.text = " Quests: \n";
                 foreach (string name in QuestManager.instance.Quests) // doesnt work with more than two questsa
